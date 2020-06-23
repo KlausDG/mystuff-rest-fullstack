@@ -1,0 +1,10 @@
+.subheader{
+    background-color: $color-primary-normal;
+    height: 50px;
+    @include flex(row, center, center);
+
+    &-text{
+        color: $color-white;
+        font-size: scut-rem(18px);
+    }
+}

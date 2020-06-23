@@ -1,16 +1,12 @@
 <template>
   <div>
-    <button @click="sortItems('A-Z')">A-Z</button>
+    <!-- <button @click="sortItems('A-Z')">A-Z</button>
     <button @click="sortItems('Z-A')">Z-A</button>
     <button @click="sortItems('Menor Preço')">Menor Preço</button>
-    <button @click="sortItems('Maior Preço')">Maior Preço</button>
-    <div v-for="(item, index) in items" v-bind:key="index">
-      <div v-if="canShow(item.category)">
-        <p>{{item.title}}</p>
-        <!-- <img src="https://thumbnails-photos.amazon.com/v1/thumbnail/OukdnsmEQdmO-mKHDGyp7g?viewBox=575&ownerId=AHWBTWJRHNSH8" alt=""> -->
-        <img :src="item.image" alt="imagem" />
-        <p>{{item.price}}</p>
-      </div>
+    <button @click="sortItems('Maior Preço')">Maior Preço</button> -->
+    <div class="products-container">
+      <item v-for="(item, index) in availableItems" v-bind:key="index" v-bind:item="item"/>
+
     </div>
   </div>
 </template>
@@ -29,6 +25,15 @@ export default {
 
   created() {
     this.fetch();
+  },
+
+  computed: {
+    availableItems: function() {
+      let vm = this;
+      return this.items.filter(function(e) {
+        return e.isAvailable && vm.canShow(e.category);
+      });
+    }
   },
 
   methods: {
@@ -60,6 +65,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

@@ -1,0 +1,37 @@
+.header {
+  @include flex(row, space-between);
+  max-width: $container-size;
+  margin: auto;
+  height: 100px;
+
+  &-logo {
+    margin: auto 0;
+    font-family: $font-alice;
+    font-size: scut-rem(42px);
+    color: $color-primary-dark;
+  }
+}
+
+.nav {
+  width: 610px;
+
+  &-list {
+    @include flex(row, space-around, center);
+    height: 100%;
+
+    &-item {
+      font-size: scut-rem(16px);
+      font-weight: $semibold;
+      color: $color-primary-light;
+    }
+  }
+}
+
+.selected::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: $color-primary-light;
+  margin-top: -2px;
+}

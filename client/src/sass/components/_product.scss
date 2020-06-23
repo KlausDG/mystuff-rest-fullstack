@@ -1,0 +1,40 @@
+.product {
+  margin: 15px;
+  width: 400px;
+  max-height: 160px;
+  display: flex;
+  flex-shrink: 0 !important;
+
+  &-image {
+    @include size(160px);
+    @extend %background-image-normalize;
+  }
+
+  &-info {
+    @include flex(column, space-between);
+  }
+
+  &-author {
+    font-size: scut-rem(10px);
+    font-weight: $semibold;
+    color: $color-fade;
+  }
+
+  &-title {
+    margin-top: -5px;
+    font-family: $font-alice;
+    font-size: scut-rem(18px);
+    color: $color-primary-dark;
+  }
+
+  &-category {
+    font-weight: $semibold;
+    font-size: scut-rem(12px);
+  }
+
+  &-price {
+    margin: 5px 0 5px 0;
+    font-size: scut-rem(18px);
+    font-weight: bolder;
+  }
+}
