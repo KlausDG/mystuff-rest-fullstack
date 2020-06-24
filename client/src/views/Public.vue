@@ -1,12 +1,42 @@
 <template>
   <div>
-    <!-- <button @click="sortItems('A-Z')">A-Z</button>
-    <button @click="sortItems('Z-A')">Z-A</button>
-    <button @click="sortItems('Menor Preço')">Menor Preço</button>
-    <button @click="sortItems('Maior Preço')">Maior Preço</button> -->
     <div class="products-container">
-      <item v-for="(item, index) in availableItems" v-bind:key="index" v-bind:item="item"/>
-
+      <item
+        v-for="(item, index) in availableItems.slice(startItem, startItem + displayAmount)"
+        v-bind:key="index"
+        v-bind:item="item"
+      />
+    </div>
+    <div class="pagination">
+      <button
+        class="pagination-btn pagination-control-btn"
+        :class="{'disabled': currentPage === 1}"
+        v-on:click="changePage(currentPage - 1)"
+      >
+        <icon-base class="pagination-icon" icon-name="previous">
+          <previous-icon></previous-icon>
+        </icon-base>
+      </button>
+      <ul class="pagination-item-list">
+        <li
+          v-for="n in pageCount"
+          :key="n"
+          class="pagination-item"
+          :class="{'current': n == currentPage, 'radius-left': n === 1, 'radius-right':  n === pageCount}"
+          v-on:click="changePage(n)"
+        >
+          <button class="pagination-btn" :class="{'border-right': n < pageCount}">{{n}}</button>
+        </li>
+      </ul>
+      <button
+        class="pagination-btn pagination-control-btn"
+        :class="{'disabled': currentPage === pageCount-1}"
+        v-on:click="changePage(currentPage + 1)"
+      >
+        <icon-base class="pagination-icon" icon-name="next">
+          <next-icon></next-icon>
+        </icon-base>
+      </button>
     </div>
   </div>
 </template>
@@ -19,7 +49,9 @@ export default {
     return {
       items: [],
       filter: "all",
-      order: "A-Z"
+      order: "A-Z",
+      displayAmount: 1,
+      currentPage: 1
     };
   },
 
@@ -33,6 +65,18 @@ export default {
       return this.items.filter(function(e) {
         return e.isAvailable && vm.canShow(e.category);
       });
+    },
+    totalItems: function() {
+      return this.items.length;
+    },
+    startItem: function() {
+      return this.displayAmount * (this.currentPage - 1);
+    },
+    endItem: function() {
+      return this.startItem + this.displayAmount;
+    },
+    pageCount: function() {
+      return Math.ceil(this.totalItems / this.displayAmount);
     }
   },
 
@@ -61,6 +105,10 @@ export default {
           return b.price - a.price;
         }
       });
+    },
+
+    changePage(page) {
+      this.currentPage = page;
     }
   }
 };

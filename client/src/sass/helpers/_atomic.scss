@@ -1,8 +1,16 @@
 .color-contrast {
-    color: $color-contrast;
+  color: $color-contrast;
 }
 
 .container {
-    margin: auto;
-    width: $container-size;
+  margin: auto;
+  width: $container-size;
+}
+
+.radius-left {
+  border-radius: 5px 0 0 5px;
+}
+
+.radius-right {
+  border-radius: 0 5px 5px 0;
 }

@@ -1,0 +1,40 @@
+.pagination {
+  @include size(100%, 50px);
+  @include flex(row, center, center);
+  margin-top: 15px;
+  position: relative;
+  padding: 0;
+
+  &-btn {
+    @include size(40px);
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: $color-primary-dark;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+
+  &-item-list {
+    @include flex(row, center, center);
+    font-size: $font-sm;
+  }
+
+
+  &-icon {
+    position: relative;
+    top: 17.5%;
+    left: 15%;
+    color: $color-primary-normal;
+  }
+}
+
+.current {
+  background-color: $color-gray;
+}
+
+.border-right {
+  @include customBorder(1px, solid, #eee9e8, right);
+  
+}
