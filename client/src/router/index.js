@@ -9,7 +9,8 @@ const routes = [
   {
     path: '/',
     name: 'public',
-    component: Public
+    component: Public,
+    props: true
   },
 //   {
 //     path: '/admin',

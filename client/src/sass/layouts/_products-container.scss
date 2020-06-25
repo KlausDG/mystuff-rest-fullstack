@@ -1,7 +1,6 @@
 .products-container {
-    @include flex(row, space-between);
+    @include flex(row);
     flex-wrap: wrap;
     margin: auto;
-    padding: auto;
-    width: $container-size;
+    width: 1290px;
 }

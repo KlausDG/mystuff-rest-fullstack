@@ -21,15 +21,6 @@ mongoose.connect(
   }
 );
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://klausdg:<password>@items-s5d9q.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
 // Middleware
 app.use(express.json())
 app.use(morgan("common"));

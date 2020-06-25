@@ -19,7 +19,7 @@ router.post("/add", async (req, res, next) => {
 });
 
 // Fetch all
-router.get("/all", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const items = await Item.find();
     res.json(items);

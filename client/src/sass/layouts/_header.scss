@@ -9,20 +9,30 @@
     font-family: $font-alice;
     font-size: scut-rem(42px);
     color: $color-primary-dark;
+    cursor: pointer;
   }
 }
 
 .nav {
-  width: 610px;
-
   &-list {
-    @include flex(row, space-around, center);
+    @include flex(row, null, center);
     height: 100%;
 
     &-item {
       font-size: scut-rem(16px);
       font-weight: $semibold;
+      margin-left: 30px;
       color: $color-primary-light;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $color-contrast !important;
+
+        &:not(.selected) {
+          transform: translateY(-20%);
+        }
+      }
     }
   }
 }
