@@ -59,3 +59,17 @@
 
   #{$border}: $size $style $color;
 }
+
+@mixin media($media) {
+  @if $media==phone {
+    @media only screen and (max-width: $sm_breakpoint) {
+      @content;
+    }
+  }
+
+  @else if $media==tablet {
+    @media only screen and (min-width: $sm_breakpoint + 1) and (max-width: $md_breakpoint) {
+      @content;
+    }
+  }
+}

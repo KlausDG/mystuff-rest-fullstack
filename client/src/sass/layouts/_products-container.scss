@@ -3,4 +3,14 @@
     flex-wrap: wrap;
     margin: auto;
     width: 1290px;
+
+    @include media(tablet) {
+        margin-left: 6vw;
+        width: 100%;
+    }
+
+    @include media(phone) {
+        flex-direction: column;
+        width: 100%;
+    }
 }
