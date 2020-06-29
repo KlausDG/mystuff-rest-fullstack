@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "npm run build",
+    "start": "npm run server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -10,10 +12,11 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.3",
     "vue-router": "^3.3.4",
-    "vuejs-paginate": "^2.1.0"
+    "vuejs-paginate": "^2.1.0",
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.4.6",
