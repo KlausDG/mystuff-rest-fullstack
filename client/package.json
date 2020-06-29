@@ -16,7 +16,7 @@
     "vue": "^2.6.11",
     "vue-loader": "^15.9.3",
     "vue-router": "^3.3.4",
-    "vuejs-paginate": "^2.1.0",
+    "vuejs-paginate": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.4.6",
