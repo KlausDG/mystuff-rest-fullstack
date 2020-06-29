@@ -73,5 +73,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "sass/Main.scss";
+@import "node_modules/sass/Main.scss";
 </style>
