@@ -7,7 +7,7 @@ import router from "./router";
 Vue.config.productionTip = false;
 
 // axios.defaults.baseURL = "api/items/";
-axios.defaults.baseURL = "http://cdk-api.herokuapp.com/api/items";
+axios.defaults.baseURL = "https://cdk-api.herokuapp.com/api/items";
 
 Vue.component("main-header", require("./components/Header.vue").default);
 Vue.component("sub-header", require("./components/Subheader.vue").default);
