@@ -1,12 +1,13 @@
 import Vue from "vue";
 import App from "./App.vue";
 import axios from "axios";
-import router from "./router/index";
-import paginate from "vuejs-paginate";
+import router from "./router";
+// import paginate from "vuejs-paginate";
 
 Vue.config.productionTip = false;
 
-axios.defaults.baseURL = "http://localhost:5000/api/items/";
+// axios.defaults.baseURL = "api/items/";
+axios.defaults.baseURL = "http://cdk-api.herokuapp.com/api/items";
 
 Vue.component("main-header", require("./components/Header.vue").default);
 Vue.component("sub-header", require("./components/Subheader.vue").default);
@@ -19,7 +20,7 @@ Vue.component("search-icon",require("./components/Icons/Search-Icon.vue").defaul
 Vue.component("previous-icon",require("./components/Icons/Previous-Icon.vue").default);
 Vue.component("next-icon",require("./components/Icons/Next-Icon.vue").default);
 
-Vue.component("paginate", paginate);
+// Vue.component("paginate", paginate);
 
 new Vue({
   router,
