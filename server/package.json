@@ -1,6 +1,9 @@
 {
   "name": "mystuff-crud",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.3"
+  },
   "description": "Web aplication to list all my stuf",
   "main": "index.js",
   "scripts": {
