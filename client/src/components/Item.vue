@@ -26,7 +26,7 @@
             class="faded"
           >{{item.oldPrice}},00</span>
         </h2>
-        <button class="product-btn">{{ btnText }}</button>
+        <button class="product-btn" @click="sendMessage(item.title)">{{ btnText }}</button>
       </div>
     </div>
   </div>
@@ -40,9 +40,20 @@ export default {
   },
   data() {
     return {
-      btnText: "ENTRAR EM CONTATO"
+      btnText: "ENTRAR EM CONTATO",
+      contact: "981432111",
     };
-  }
+  },
+
+  methods: {
+    sendMessage(title) {
+      let message = "Olá! Tenho interesse no " + title;
+      let formatedMessage = message.split(" ").join("%20");
+      let url =
+        "https://wa.me/5555" + this.contact + "?text=" + formatedMessage;
+      window.open(url, "_blank");
+    },
+  },
 };
 </script>
 
