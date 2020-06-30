@@ -8,10 +8,7 @@
       @search="searchItem"
       :filter="filter"
     ></filter-menu>
-    <router-view
-      @total-items="totalItems"
-      :filter="filter"
-    />
+    <router-view @total-items="totalItems" :filter="filter" />
     <my-footer></my-footer>
   </div>
 </template>
@@ -67,11 +64,11 @@ export default {
           currentPage: 1
         }
       };
-    },
+    }
   }
 };
 </script>
 
 <style lang="scss">
-@import "./sass/Main.scss";
+  @import "./sass/main.scss";
 </style>
